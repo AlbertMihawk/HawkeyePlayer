@@ -24,6 +24,7 @@ EyeFFmpeg::EyeFFmpeg(JavaCallHelper *javaCallHelper, char *dataSource) {
 
 }
 
+//内存释放
 EyeFFmpeg::~EyeFFmpeg() {
     DELETE(dataSource);
     DELETE(javaCallHelper);
@@ -32,5 +33,8 @@ EyeFFmpeg::~EyeFFmpeg() {
 
 //播放准备
 void EyeFFmpeg::prepare() {
+    //解封装
+    //可以直接来进行解码api调用么？
+    90：42
 
 }
