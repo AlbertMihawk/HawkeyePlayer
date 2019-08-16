@@ -9,9 +9,13 @@
 #include "JavaCallHelper.h"
 #include "AudioChannel.h"
 #include "VideoChannel.h"
-
 #include <cstring>
 #include "marco.h"
+#include <pthread.h>
+
+extern "C" {
+#include <libavformat/avformat.h>
+};
 
 class EyeFFmpeg {
 public:
@@ -21,13 +25,14 @@ public:
 
     void prepare();
 
+    void _prepare();
+
 private:
     JavaCallHelper *javaCallHelper = 0;
     AudioChannel *audioChannel = 0;
     VideoChannel *videoChannel = 0;
+    pthread_t pid_prepare;
     char *dataSource;
-
-
 };
 
 
