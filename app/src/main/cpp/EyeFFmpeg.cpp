@@ -57,14 +57,16 @@ void EyeFFmpeg::_prepare() {
     AVFormatContext *formatCtx = avformat_alloc_context();//创建上下文
     AVDictionary *dictionary = 0;
     av_dict_set(&dictionary, "timeout", "10000000", 0);
-    avformat_open_input(&formatCtx, dataSource, 0, &dictionary);
+    int ret = avformat_open_input(&formatCtx, dataSource, 0, &dictionary);
     //需要释放
     av_dict_free(&dictionary);
-
-    if(ret)
+    if (ret) {
         //失败，回调给Java层
-        LOGE
-
+        LOGE("avformat 打开媒体失败 %s", av_err2str(ret));
+        //JavaCallHelper jni 回调Java
+        // JavaCallHelper.onError(ret);
+        //Java层需要根据errorCode来更新ui
+    }
 
 
 }

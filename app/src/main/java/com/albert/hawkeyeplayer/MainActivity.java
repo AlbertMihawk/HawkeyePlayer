@@ -26,7 +26,15 @@ public class MainActivity extends AppCompatActivity {
         player = new EyePlayer();
         player.setDataSource(new File(Environment.getExternalStorageDirectory()
                 + File.separator + "input.mp4").getAbsolutePath());
-
+        player.setListener(new EyePlayer.MyErrorListener() {
+            @Override
+            public void onError(int errorCode) {
+                switch (errorCode) {
+                    case 0:
+                        break;
+                }
+            }
+        });
 
     }
 
