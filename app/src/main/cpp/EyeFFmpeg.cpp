@@ -51,12 +51,14 @@ void *task_prepare(void *args) {
     return 0;//函数指针一定一定要返回0
 }
 
+
 void EyeFFmpeg::_prepare() {
     //1 ffmpegcontext
 
-    AVFormatContext *formatCtx = avformat_alloc_context();//创建上下文
+    formatCtx = avformat_alloc_context();//创建上下文
     AVDictionary *dictionary = 0;
     av_dict_set(&dictionary, "timeout", "10000000", 0);
+    //1.打开媒体文件
     int ret = avformat_open_input(&formatCtx, dataSource, 0, &dictionary);
     //需要释放
     av_dict_free(&dictionary);
@@ -64,11 +66,71 @@ void EyeFFmpeg::_prepare() {
         //失败，回调给Java层
         LOGE("avformat 打开媒体失败 %s", av_err2str(ret));
         //JavaCallHelper jni 回调Java
+        //TODO 自己实现异常回调
         // JavaCallHelper.onError(ret);
         //Java层需要根据errorCode来更新ui
+
+        return;
+    }
+    //2.查找媒体中的编码方式(流信息)
+    ret = avformat_find_stream_info(formatCtx, 0);
+    if (ret < 0) {
+        //TODO 作业
+        LOGE("查找媒体编码方式失败");
+        return;
+    }
+    for (int i = 0; i < formatCtx->nb_streams; ++i) {
+        AVStream *stream = formatCtx->streams[i];
+        //获取编解码流参数
+        AVCodecParameters *codecParams = stream->codecpar;
+        //3.通过id拿到编解码器
+        AVCodec *codec = avcodec_find_decoder(codecParams->codec_id);
+        if (!codec) {
+            //TODO 作业
+            LOGE("编码器创建失败");
+            return;
+        }
+        //4.获得编解码器的上下文
+        AVCodecContext *codecContext = avcodec_alloc_context3(codec);
+        //5.设置解码器上下文参数
+        ret = avcodec_parameters_to_context(codecContext, codecParams);
+        if (ret < 0) {
+            //TODO 作业
+            LOGE("查找媒体编码方式失败");
+            return;
+        }
+        //6.打开解码器
+        ret = avcodec_open2(codecContext, codec, 0);
+        if (ret < 0) {
+            //TODO 作业
+            LOGE("打开解码器失败");
+            return;
+        }
+        //判断流类型（Audio，Video）
+        AVMediaType mediaType = codecParams->codec_type;
+        //如果是音频
+        if (mediaType == AVMEDIA_TYPE_AUDIO) {
+            //AudioChannel
+            audioChannel = new AudioChannel(i);
+        }
+        //如果是视频
+        if (mediaType == AVMEDIA_TYPE_VIDEO) {
+            //VideoChannel
+            videoChannel = new VideoChannel(i);
+        }
+    }
+    if (!audioChannel && !videoChannel) {
+        //既没有音频，有没有视频
+        //TODO 作业
+        LOGE("音频和视频都没有找到");
+        return;
     }
 
+    //准备好了,反射通知Java
+    if (javaCallHelper) {
 
+        javaCallHelper->onPrepared(THREAD_CHILD);
+    }
 }
 
 /**
@@ -91,6 +153,58 @@ void EyeFFmpeg::prepare() {
     // void*); 回调函数的参数
     pthread_create(&pid_prepare, 0, task_prepare, this);
 
+
+}
+
+void *task_start(void *args) {
+    EyeFFmpeg *ffmpeg = static_cast<EyeFFmpeg *>(args);
+
+    ffmpeg->_start();
+    return 0;
+
+}
+
+/**
+ * 开始播放
+ */
+void EyeFFmpeg::start() {
+    isPlaying = 1;
+    pthread_create(&pid_start, 0, task_start, this);
+
+}
+
+/**
+ * 子线程播放操作
+ */
+void EyeFFmpeg::_start() {
+    while (isPlaying) {
+        AVPacket *packet = av_packet_alloc();
+        int ret = av_read_frame(formatCtx, packet);
+        if (!ret) {
+            //ret 为0是正确
+            //区分流类型，音频还是视频
+            if (videoChannel && packet->stream_index == videoChannel->id) {
+                //添加视频数据到数据队列
+                videoChannel->packets.push(packet);
+            } else if (audioChannel && packet->stream_index == audioChannel->id) {
+                //添加音频数据到数据队列
+                audioChannel->packets.push(packet);
+            }
+
+        } else if (ret == AVERROR_EOF) {
+            //ret不为0，end of数据到结尾,读完了
+            //有可能读完了，播放为完成
+            //TODO
+
+        } else {
+            //TODO 作业，出现错误
+            LOGE("读取音视频错误");
+            break;
+        }
+
+    }
+    isPlaying = 0;
+    //停止音视频解码
 
 }
 

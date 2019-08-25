@@ -4,8 +4,16 @@
 
 #include "VideoChannel.h"
 
-VideoChannel::VideoChannel() {}
+VideoChannel::VideoChannel(int id) : BaseChannel(id) {}
 
 VideoChannel::~VideoChannel() {
+
+}
+
+void VideoChannel::start() {
+
+}
+
+void VideoChannel::stop() {
 
 }

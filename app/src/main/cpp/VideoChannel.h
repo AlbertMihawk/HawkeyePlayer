@@ -7,12 +7,17 @@
 
 
 #include "BaseChannel.h"
+#include "safe_queue.h"
 
 class VideoChannel : public BaseChannel {
 public:
-    VideoChannel();
+    VideoChannel(int id);
 
-     ~VideoChannel();
+    ~VideoChannel();
+
+    void start();
+
+    void stop();
 };
 
 

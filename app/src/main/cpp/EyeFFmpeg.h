@@ -27,12 +27,20 @@ public:
 
     void _prepare();
 
+    void start();
+
+    void _start();
+
 private:
     JavaCallHelper *javaCallHelper = 0;
     AudioChannel *audioChannel = 0;
     VideoChannel *videoChannel = 0;
-    pthread_t pid_prepare;
     char *dataSource;
+    pthread_t pid_prepare;
+    pthread_t pid_start;
+    bool isPlaying;
+
+    AVFormatContext *formatCtx;
 };
 
 
