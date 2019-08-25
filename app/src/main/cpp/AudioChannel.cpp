@@ -5,7 +5,7 @@
 #include "AudioChannel.h"
 
 
-AudioChannel::AudioChannel(int id) : BaseChannel(id) {
+AudioChannel::AudioChannel(int id, AVCodecContext *codecCtx) : BaseChannel(id, codecCtx) {
 }
 
 AudioChannel::~AudioChannel() {

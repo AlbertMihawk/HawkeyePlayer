@@ -29,11 +29,15 @@ add_library(
 
 target_link_libraries( # Specifies the target library.
         hawkeyeplayer
+        -Wl,--start-group
         avformat
         avcodec
         avfilter
         avutil
         swresample
         swscale
+        -Wl,--end-group
         z
-        log)
+        log
+        android
+        )

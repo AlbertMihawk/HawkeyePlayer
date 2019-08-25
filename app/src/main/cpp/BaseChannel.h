@@ -17,7 +17,7 @@ extern "C" {
 
 class BaseChannel {
 public:
-    BaseChannel(int id):id(id) {
+    BaseChannel(int id, AVCodecContext *codecCtx) : id(id), codecCtx(codecCtx) {
         packets.setReleaseCallback(releaseAVPacket);
         frames.setReleaseCallback(releaseAVFrame);
     }
@@ -42,14 +42,18 @@ public:
             *frame = 0;
         }
     }
+
     //纯虚函数（抽象方法）
     virtual void stop() = 0;
+
     virtual void start() = 0;
 
 
     SafeQueue<AVPacket *> packets;
     SafeQueue<AVFrame *> frames;
     int id;
+    bool isPlaying = 0;
+    AVCodecContext *codecCtx;
 };
 
 #endif //HAWKEYEPLAYER_BASECHANNEL_H

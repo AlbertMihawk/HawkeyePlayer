@@ -1,6 +1,10 @@
 package com.albert.hawkeyeplayer.View;
 
-public class EyePlayer {
+import android.view.Surface;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+
+public class EyePlayer implements SurfaceHolder.Callback {
 
     static {
 
@@ -9,7 +13,9 @@ public class EyePlayer {
 
     //直播地址或者媒体文件路径
     private String dataSource;
-    private OnErrorListener errorlistener;
+    private SurfaceHolder mHolder;
+
+    private OnErrorListener onErrorListener;
     private OnPreparedListener onPreparedListener;
 
     public void setDataSource(String dataSource) {
@@ -34,14 +40,15 @@ public class EyePlayer {
     public native void startNative();
 
     /**
-     * 给jni回调用
+     * 给jni回调用错误
      * errorCode 从JNI通过反射传递过来
      *
      * @param errorCode
      */
     public void onError(int errorCode) {
-        errorlistener.onError(errorCode);
-
+        if (onErrorListener != null) {
+            onErrorListener.onError(errorCode);
+        }
     }
 
     /**
@@ -58,16 +65,60 @@ public class EyePlayer {
         this.onPreparedListener = onPreparedListener;
     }
 
-    public void setListener(OnErrorListener errorlistener) {
-        this.errorlistener = errorlistener;
+    public void setOnErrorListener(OnErrorListener onErrorListener) {
+        this.onErrorListener = onErrorListener;
     }
 
     private native void prepareNative(String dataSource);
 
+    public void setSurfaceView(SurfaceView surfaceView) {
+        if (mHolder != null) {
+            mHolder.removeCallback(this);
+        }
+        mHolder = surfaceView.getHolder();
+        mHolder.addCallback(this);
+    }
+
+
+    /**
+     * 创建画布
+     *
+     * @param holder
+     */
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+
+    }
+
+    /**
+     * 画布刷新
+     *
+     * @param holder
+     * @param format
+     * @param width
+     * @param height
+     */
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+        setSurfaceNative(holder.getSurface());
+    }
+
+    /**
+     * 画布销毁
+     *
+     * @param holder
+     */
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+
+    }
+
+    public native void setSurfaceNative(Surface surface);
+
+
     public interface OnPreparedListener {
         void onPrepared();
     }
-
 
     public interface OnErrorListener {
         void onError(int errorCode);

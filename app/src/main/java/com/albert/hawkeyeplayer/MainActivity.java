@@ -30,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         requestPermissions();
         surfaceView = findViewById(R.id.surface_view);
         player = new EyePlayer();
+        player.setSurfaceView(surfaceView);
+
         player.setDataSource(new File(Environment.getExternalStorageDirectory()
                 + File.separator + "input.mp4").getAbsolutePath());
-        player.setListener(new EyePlayer.OnErrorListener() {
+        player.setOnErrorListener(new EyePlayer.OnErrorListener() {
             @Override
             public void onError(final int errorCode) {
                 runOnUiThread(new Runnable() {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 });
                 //播放 调用到native去
                 //开始播放
+//                player.start();
             }
         });
 
@@ -77,9 +80,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+//        player.prepare();
     }
 
     public void Prepare(View view) {
         player.prepare();
+    }
+
+    public void Play(View view) {
+        player.start();
     }
 }

@@ -11,8 +11,9 @@ JavaCallHelper::JavaCallHelper(JavaVM *javaVM_, JNIEnv *env_, jobject instance_)
 //    this->instance = instance_;
     //一旦涉及到jobject跨方法和线程，都需要创建全局引用
     this->instance = env->NewWeakGlobalRef(instance_);
-    jclass clazz = env->GetObjectClass(instance);
+    this->clazz = env->GetObjectClass(instance);
     jmd_prepared = env->GetMethodID(clazz, "onPrepared", "()V");
+    jmd_error = env->GetMethodID(clazz, "onError", "(I)V");
 
 
 }
@@ -38,3 +39,22 @@ void JavaCallHelper::onPrepared(int threadMode) {
         javaVM->DetachCurrentThread();
     }
 }
+
+void JavaCallHelper::onError(int threadMode, int errorCode) {
+    if (threadMode == THREAD_MAIN) {
+        //主线程
+        env->CallVoidMethod(instance, jmd_error, errorCode);
+    }
+
+    if (threadMode == THREAD_CHILD) {
+        //子线程
+        //当前子线程的Env
+        JNIEnv *env_child;
+        javaVM->AttachCurrentThread(&env_child, 0);
+        env_child->CallVoidMethod(instance, jmd_error, errorCode);
+        javaVM->DetachCurrentThread();
+
+    }
+
+}
+

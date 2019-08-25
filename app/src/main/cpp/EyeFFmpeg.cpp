@@ -69,7 +69,9 @@ void EyeFFmpeg::_prepare() {
         //TODO 自己实现异常回调
         // JavaCallHelper.onError(ret);
         //Java层需要根据errorCode来更新ui
-
+        if (javaCallHelper) {
+            javaCallHelper->onError(THREAD_CHILD, ret);
+        }
         return;
     }
     //2.查找媒体中的编码方式(流信息)
@@ -77,6 +79,9 @@ void EyeFFmpeg::_prepare() {
     if (ret < 0) {
         //TODO 作业
         LOGE("查找媒体编码方式失败");
+        if (javaCallHelper) {
+            javaCallHelper->onError(THREAD_CHILD, ret);
+        }
         return;
     }
     for (int i = 0; i < formatCtx->nb_streams; ++i) {
@@ -88,6 +93,9 @@ void EyeFFmpeg::_prepare() {
         if (!codec) {
             //TODO 作业
             LOGE("编码器创建失败");
+            if (javaCallHelper) {
+                javaCallHelper->onError(THREAD_CHILD, ret);
+            }
             return;
         }
         //4.获得编解码器的上下文
@@ -97,6 +105,9 @@ void EyeFFmpeg::_prepare() {
         if (ret < 0) {
             //TODO 作业
             LOGE("查找媒体编码方式失败");
+            if (javaCallHelper) {
+                javaCallHelper->onError(THREAD_CHILD, ret);
+            }
             return;
         }
         //6.打开解码器
@@ -104,6 +115,9 @@ void EyeFFmpeg::_prepare() {
         if (ret < 0) {
             //TODO 作业
             LOGE("打开解码器失败");
+            if (javaCallHelper) {
+                javaCallHelper->onError(THREAD_CHILD, ret);
+            }
             return;
         }
         //判断流类型（Audio，Video）
@@ -111,18 +125,22 @@ void EyeFFmpeg::_prepare() {
         //如果是音频
         if (mediaType == AVMEDIA_TYPE_AUDIO) {
             //AudioChannel
-            audioChannel = new AudioChannel(i);
+            audioChannel = new AudioChannel(i, codecContext);
         }
         //如果是视频
         if (mediaType == AVMEDIA_TYPE_VIDEO) {
             //VideoChannel
-            videoChannel = new VideoChannel(i);
+            videoChannel = new VideoChannel(i, codecContext);
+            videoChannel->setRenderCallback(renderCallback);
         }
     }
     if (!audioChannel && !videoChannel) {
         //既没有音频，有没有视频
         //TODO 作业
         LOGE("音频和视频都没有找到");
+        if (javaCallHelper) {
+            javaCallHelper->onError(THREAD_CHILD, ret);
+        }
         return;
     }
 
@@ -132,6 +150,7 @@ void EyeFFmpeg::_prepare() {
         javaCallHelper->onPrepared(THREAD_CHILD);
     }
 }
+
 
 /**
  * 播放准备
@@ -168,7 +187,11 @@ void *task_start(void *args) {
  * 开始播放
  */
 void EyeFFmpeg::start() {
-    isPlaying = 1;
+    isPreparing = 1;
+    videoChannel->start();
+    audioChannel->start();
+
+
     pthread_create(&pid_start, 0, task_start, this);
 
 }
@@ -177,7 +200,7 @@ void EyeFFmpeg::start() {
  * 子线程播放操作
  */
 void EyeFFmpeg::_start() {
-    while (isPlaying) {
+    while (isPreparing) {
         AVPacket *packet = av_packet_alloc();
         int ret = av_read_frame(formatCtx, packet);
         if (!ret) {
@@ -199,13 +222,23 @@ void EyeFFmpeg::_start() {
         } else {
             //TODO 作业，出现错误
             LOGE("读取音视频错误");
+            if (javaCallHelper) {
+                javaCallHelper->onError(THREAD_CHILD, ret);
+            }
             break;
         }
 
     }
-    isPlaying = 0;
-    //停止音视频解码
+    isPreparing = 0;
 
+    //停止音视频解码
+    videoChannel->stop();
+    audioChannel->stop();
+
+}
+
+void EyeFFmpeg::setRenderCallback(RenderCallback renderCallback) {
+    this->renderCallback = renderCallback;
 }
 
 
