@@ -3,10 +3,11 @@
 //
 
 
+
 #include "VideoChannel.h"
 
-VideoChannel::VideoChannel(int id, AVCodecContext *codecCtx) : BaseChannel(id, codecCtx) {
-
+VideoChannel::VideoChannel(int id, AVCodecContext *codecCtx, int fps) : BaseChannel(id, codecCtx) {
+    this->fps = fps;
 }
 
 VideoChannel::~VideoChannel() {
@@ -102,7 +103,10 @@ void VideoChannel::video_play() {
     //                   int w, int h, enum AVPixelFormat pix_fmt, int align);
     ret = av_image_alloc(dst_data, dst_linesize,
                          codecCtx->width, codecCtx->height, AV_PIX_FMT_RGBA, 1);
-
+    //根据fps控制每一帧的延时时间
+    //sleep:fps 转成 时间，
+    //单位是秒
+    double frame_delay = 1.0 / fps;
     while (isPlaying) {
         ret = frames.pop(frame);
         if (!isPlaying) {
@@ -115,6 +119,13 @@ void VideoChannel::video_play() {
         //取到了yuv原始数据，进行转换
         sws_scale(swsCtx, frame->data, frame->linesize, 0, codecCtx->height, dst_data,
                   dst_linesize);
+        //进行休眠
+        //每一帧还有自己额外延时时间
+        double extra_delay = frame->repeat_pict / (2 * fps);
+        av_usleep(extra_delay);
+        av_usleep(frame_delay * 1000000);
+        23:20
+
         //dst_data:AV_PIX_FMT_RGBA格式的数据
         //进行渲染，回调出去 native-lib
         //渲染图像，需要什么信息？
@@ -125,6 +136,7 @@ void VideoChannel::video_play() {
         renderCallback(dst_data[0], dst_linesize[0], codecCtx->width, codecCtx->height);
         //frame释放
         releaseAVFrame(&frame);
+        frame = 0;
     }
     releaseAVFrame(&frame);
     isPlaying = 0;

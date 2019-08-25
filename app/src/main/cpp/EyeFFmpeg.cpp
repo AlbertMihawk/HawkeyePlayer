@@ -130,7 +130,11 @@ void EyeFFmpeg::_prepare() {
         //如果是视频
         if (mediaType == AVMEDIA_TYPE_VIDEO) {
             //VideoChannel
-            videoChannel = new VideoChannel(i, codecContext);
+            AVRational avRational = stream->avg_frame_rate;
+            //fps帧率
+//            int fps = avRational.num / avRational.den;
+            double fps = av_q2d(avRational);
+            videoChannel = new VideoChannel(i, codecContext, fps);
             videoChannel->setRenderCallback(renderCallback);
         }
     }
