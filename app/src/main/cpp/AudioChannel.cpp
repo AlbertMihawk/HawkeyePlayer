@@ -89,6 +89,15 @@ void AudioChannel::audio_decode() {
 
 }
 
+//4.3创建回调函数
+void bqPlayerCallback(SLAndroidSimpleBufferQueueItf bq, void *context) {
+    AudioChannel *audioChannel = static_cast<AudioChannel *>(context);
+
+    77:00
+    (*bq)->Enqueue(bq, nextBuffer, nextSize);
+}
+
+
 /**
  * 音频播放
  */
