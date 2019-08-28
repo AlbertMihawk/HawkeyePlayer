@@ -7,17 +7,27 @@
 
 
 #include "BaseChannel.h"
+#include <SLES/OpenSLES_Android.h>
+#include <SLES/OpenSLES.h>
 
 class AudioChannel : public BaseChannel {
 public:
     AudioChannel(int id, AVCodecContext *codecCtx);
 
-     ~AudioChannel();
+    ~AudioChannel();
 
     void start();
 
     void stop();
 
+    void audio_decode();
+
+    void audio_play();
+
+private:
+    pthread_t pid_audio_decode;
+    pthread_t pid_audio_play;
+    int fps;
 };
 
 

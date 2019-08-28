@@ -11,7 +11,6 @@
 extern "C" {
 #include <libswscale/swscale.h>
 #include <libavutil/imgutils.h>
-#include <libavutil/time.h>
 };
 
 typedef void (*RenderCallback)(uint8_t *data, int lineSize, int Width, int height);

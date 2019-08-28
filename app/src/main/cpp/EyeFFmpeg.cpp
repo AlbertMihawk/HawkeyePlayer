@@ -192,9 +192,12 @@ void *task_start(void *args) {
  */
 void EyeFFmpeg::start() {
     isPreparing = 1;
-    videoChannel->start();
-    audioChannel->start();
-
+    if (videoChannel) {
+        videoChannel->start();
+    }
+    if (audioChannel) {
+        audioChannel->start();
+    }
 
     pthread_create(&pid_start, 0, task_start, this);
 
@@ -204,7 +207,16 @@ void EyeFFmpeg::start() {
  * 子线程播放操作
  */
 void EyeFFmpeg::_start() {
+
     while (isPreparing) {
+        /**
+         * 内存泄露点1
+         * 控制packets队列数量
+           */
+        if (videoChannel && videoChannel->packets.size() > 100) {
+            av_usleep(10 * 1000);
+            continue;
+        }
         AVPacket *packet = av_packet_alloc();
         int ret = av_read_frame(formatCtx, packet);
         if (!ret) {

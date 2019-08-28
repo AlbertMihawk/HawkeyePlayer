@@ -77,6 +77,14 @@ void VideoChannel::video_decode() {
         }
         //成功获取解码后数据包
         //把frame存到队列，进入播放
+        /**
+         * 内存泄露点2
+         * 控制frames队列数量
+         */
+        while (isPlaying && frames.size() > 100) {
+            av_usleep(10 * 1000);
+            continue;
+        }
         frames.push(frame);
 
     }
@@ -106,7 +114,7 @@ void VideoChannel::video_play() {
     //根据fps控制每一帧的延时时间
     //sleep:fps 转成 时间，
     //单位是秒
-    double frame_delay = 1.0 / fps;
+    double delay_time_per_frame = 1.0 / fps;
     while (isPlaying) {
         ret = frames.pop(frame);
         if (!isPlaying) {
@@ -122,9 +130,9 @@ void VideoChannel::video_play() {
         //进行休眠
         //每一帧还有自己额外延时时间
         double extra_delay = frame->repeat_pict / (2 * fps);
-        av_usleep(extra_delay);
-        av_usleep(frame_delay * 1000000);
-        23:20
+        double real_delay = extra_delay + delay_time_per_frame;
+        //单位是：微妙
+        av_usleep(real_delay * 1000000);
 
         //dst_data:AV_PIX_FMT_RGBA格式的数据
         //进行渲染，回调出去 native-lib
