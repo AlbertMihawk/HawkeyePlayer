@@ -1,0 +1,12 @@
+# ninja log v5
+3	217	1567091873	CMakeFiles/hawkeyeplayer.dir/JavaCallHelper.cpp.o	f997584de71815f6
+2	2254	1567092008	CMakeFiles/hawkeyeplayer.dir/EyeFFmpeg.cpp.o	d17231b0f976e09
+6	2319	1567092008	CMakeFiles/hawkeyeplayer.dir/native-lib.cpp.o	f263900185120846
+4	2388	1567092009	CMakeFiles/hawkeyeplayer.dir/VideoChannel.cpp.o	e06ba51ab83b89c4
+2	926	1567092068	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	753fa221d91af628
+3	792	1567092168	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	753fa221d91af628
+1	770	1567092214	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	753fa221d91af628
+2	1020	1567092337	CMakeFiles/hawkeyeplayer.dir/native-lib.cpp.o	f263900185120846
+1	1052	1567092337	CMakeFiles/hawkeyeplayer.dir/EyeFFmpeg.cpp.o	d17231b0f976e09
+1	1115	1567092337	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	753fa221d91af628
+1115	3604	1567092339	/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libhawkeyeplayer.so	e3ed08512c6bd462
