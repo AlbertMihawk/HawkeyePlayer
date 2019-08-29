@@ -1,0 +1,31 @@
+[
+{
+  "directory": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86",
+  "command": "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --gcc-toolchain=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dhawkeyeplayer_EXPORTS -I/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/x86 -O2 -DNDEBUG  -fPIC   -o CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o -c /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/AudioChannel.cpp",
+  "file": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/AudioChannel.cpp"
+},
+
+{
+  "directory": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86",
+  "command": "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --gcc-toolchain=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dhawkeyeplayer_EXPORTS -I/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/x86 -O2 -DNDEBUG  -fPIC   -o CMakeFiles/hawkeyeplayer.dir/EyeFFmpeg.cpp.o -c /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/EyeFFmpeg.cpp",
+  "file": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/EyeFFmpeg.cpp"
+},
+
+{
+  "directory": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86",
+  "command": "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --gcc-toolchain=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dhawkeyeplayer_EXPORTS -I/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/x86 -O2 -DNDEBUG  -fPIC   -o CMakeFiles/hawkeyeplayer.dir/JavaCallHelper.cpp.o -c /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/JavaCallHelper.cpp",
+  "file": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/JavaCallHelper.cpp"
+},
+
+{
+  "directory": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86",
+  "command": "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --gcc-toolchain=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dhawkeyeplayer_EXPORTS -I/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/x86 -O2 -DNDEBUG  -fPIC   -o CMakeFiles/hawkeyeplayer.dir/VideoChannel.cpp.o -c /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/VideoChannel.cpp",
+  "file": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/VideoChannel.cpp"
+},
+
+{
+  "directory": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86",
+  "command": "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --gcc-toolchain=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dhawkeyeplayer_EXPORTS -I/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/x86 -O2 -DNDEBUG  -fPIC   -o CMakeFiles/hawkeyeplayer.dir/native-lib.cpp.o -c /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/native-lib.cpp",
+  "file": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/native-lib.cpp"
+}
+]

@@ -1,0 +1,6 @@
+# ninja log v5
+5	159	1567094599	CMakeFiles/hawkeyeplayer.dir/JavaCallHelper.cpp.o	364599bb4ddf063e
+2	1229	1567094600	CMakeFiles/hawkeyeplayer.dir/EyeFFmpeg.cpp.o	ca5afa3d1a8626e0
+6	1396	1567094600	CMakeFiles/hawkeyeplayer.dir/VideoChannel.cpp.o	de676bebd0f948c2
+1	1427	1567094600	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	b561989e37ab271d
+8	1427	1567094600	CMakeFiles/hawkeyeplayer.dir/native-lib.cpp.o	55172d9b315278ff
