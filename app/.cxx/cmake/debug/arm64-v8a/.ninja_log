@@ -4,3 +4,14 @@
 6	1396	1567094600	CMakeFiles/hawkeyeplayer.dir/VideoChannel.cpp.o	de676bebd0f948c2
 1	1427	1567094600	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	b561989e37ab271d
 8	1427	1567094600	CMakeFiles/hawkeyeplayer.dir/native-lib.cpp.o	55172d9b315278ff
+11	8289	1567258928	/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhawkeyeplayer.so	195d5f48649b55a5
+3	1240	1567261095	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	b561989e37ab271d
+1240	8638	1567261103	/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhawkeyeplayer.so	195d5f48649b55a5
+2	755	1567261163	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	b561989e37ab271d
+755	3862	1567261167	/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhawkeyeplayer.so	195d5f48649b55a5
+2	1028	1567263697	CMakeFiles/hawkeyeplayer.dir/native-lib.cpp.o	55172d9b315278ff
+2	1062	1567263697	CMakeFiles/hawkeyeplayer.dir/EyeFFmpeg.cpp.o	ca5afa3d1a8626e0
+1	1108	1567263697	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	b561989e37ab271d
+1108	8251	1567263704	/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhawkeyeplayer.so	195d5f48649b55a5
+1	1032	1567263812	CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o	b561989e37ab271d
+1032	8228	1567263820	/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhawkeyeplayer.so	195d5f48649b55a5

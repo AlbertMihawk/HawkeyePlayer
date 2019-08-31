@@ -120,12 +120,15 @@ void EyeFFmpeg::_prepare() {
             }
             return;
         }
+
+        AVRational time_base = stream->time_base;
+
         //判断流类型（Audio，Video）
         AVMediaType mediaType = codecParams->codec_type;
         //如果是音频
         if (mediaType == AVMEDIA_TYPE_AUDIO) {
             //AudioChannel
-            audioChannel = new AudioChannel(i, codecContext);
+            audioChannel = new AudioChannel(i, codecContext, time_base);
         }
         //如果是视频
         if (mediaType == AVMEDIA_TYPE_VIDEO) {
@@ -134,10 +137,11 @@ void EyeFFmpeg::_prepare() {
             //fps帧率
 //            int fps = avRational.num / avRational.den;
             double fps = av_q2d(avRational);
-            videoChannel = new VideoChannel(i, codecContext, fps);
+            videoChannel = new VideoChannel(i, codecContext, fps,time_base);
             videoChannel->setRenderCallback(renderCallback);
         }
     }
+
     if (!audioChannel && !videoChannel) {
         //既没有音频，有没有视频
         //TODO 作业
@@ -150,7 +154,6 @@ void EyeFFmpeg::_prepare() {
 
     //准备好了,反射通知Java
     if (javaCallHelper) {
-
         javaCallHelper->onPrepared(THREAD_CHILD);
     }
 }
@@ -193,6 +196,7 @@ void *task_start(void *args) {
 void EyeFFmpeg::start() {
     isPreparing = 1;
     if (videoChannel) {
+        videoChannel->setAudioChannel(audioChannel);
         videoChannel->start();
     }
     if (audioChannel) {

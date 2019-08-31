@@ -9,13 +9,15 @@
 #include "BaseChannel.h"
 #include <SLES/OpenSLES_Android.h>
 #include <SLES/OpenSLES.h>
-extern "C"{
+#include "marco.h"
+
+extern "C" {
 #include <libswresample/swresample.h>
 };
 
 class AudioChannel : public BaseChannel {
 public:
-    AudioChannel(int id, AVCodecContext *codecCtx);
+    AudioChannel(int id, AVCodecContext *codecCtx, AVRational time_base);
 
     ~AudioChannel();
 
@@ -41,6 +43,7 @@ private:
     int fps;
 
 
+    SwrContext *swrCtx = 0;
     //引擎
     SLObjectItf engineObject = 0;
     //引擎接口

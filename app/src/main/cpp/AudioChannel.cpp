@@ -6,22 +6,32 @@
 #include "AudioChannel.h"
 
 
-AudioChannel::AudioChannel(int id, AVCodecContext *codecCtx) : BaseChannel(id, codecCtx) {
+AudioChannel::AudioChannel(int id, AVCodecContext *codecCtx, AVRational time_base)
+        : BaseChannel(id, codecCtx, time_base) {
 
     //缓冲区大小 通道数 * 16Bit * 采样率
     //动态获取
     out_channels = av_get_channel_layout_nb_channels(AV_CH_LAYOUT_STEREO);
     out_sampleSize = av_get_bytes_per_sample(AV_SAMPLE_FMT_S16);
-    out_sampleRate = AV_SIDE_DATA_PARAM_CHANGE_SAMPLE_RATE;
+    out_sampleRate = 44100;
     out_bufferSize = out_channels * out_sampleSize * out_sampleRate;
     out_buffers = static_cast<uint8_t *>(malloc(out_bufferSize));
     memset(out_buffers, 0, out_bufferSize);
 
-
+    swrCtx = swr_alloc_set_opts(0, AV_CH_LAYOUT_STEREO, AV_SAMPLE_FMT_S16,
+                                out_sampleRate, codecCtx->channel_layout,
+                                codecCtx->sample_fmt, codecCtx->sample_rate, 0, 0);
+    //初始化
+    swr_init(swrCtx);
 }
 
 AudioChannel::~AudioChannel() {
-
+    //释放
+    if (swrCtx) {
+        swr_free(&swrCtx);
+        swrCtx = 0;
+    }
+    DELETE(out_buffers)
 }
 
 
@@ -225,12 +235,14 @@ void AudioChannel::audio_play() {
 int AudioChannel::getPCM() {
     int pcm_data_size = 0;
     AVFrame *frame = 0;
-    SwrContext *swrCtx = swr_alloc_set_opts(0, AV_CH_LAYOUT_STEREO, AV_SAMPLE_FMT_S16,
-                                            out_sampleRate, codecCtx->channel_layout,
-                                            codecCtx->sample_fmt, codecCtx->sample_rate, 0, 0);
-
-    //初始化
-    swr_init(swrCtx);
+    /**
+     * 发生内存泄露
+     */
+//    SwrContext *swrCtx = swr_alloc_set_opts(0, AV_CH_LAYOUT_STEREO, AV_SAMPLE_FMT_S16,
+//                                            out_sampleRate, codecCtx->channel_layout,
+//                                            codecCtx->sample_fmt, codecCtx->sample_rate, 0, 0);
+//    //初始化
+//    swr_init(swrCtx);
     while (isPlaying) {
         int ret = frames.pop(frame);
         if (!isPlaying) {
@@ -251,10 +263,15 @@ int AudioChannel::getPCM() {
                                                  out_sampleRate, AV_ROUND_UP);
 
         int out_samples = swr_convert(swrCtx, &out_buffers, out_max_samples,
-                                      (const uint8_t **)(frame->data),
+                                      (const uint8_t **) (frame->data),
                                       frame->nb_samples);
         //获取swr_convert转化后
         pcm_data_size = out_samples * out_sampleSize * out_channels;
+
+        //时间戳，时间单位
+        //获取音频时间 需要传递给VideoChannel
+        audio_time = frame->best_effort_timestamp * av_q2d(time_base);
+
         break;
     }//end while
     releaseAVFrame(&frame);

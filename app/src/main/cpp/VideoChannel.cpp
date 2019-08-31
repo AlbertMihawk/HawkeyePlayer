@@ -6,7 +6,8 @@
 
 #include "VideoChannel.h"
 
-VideoChannel::VideoChannel(int id, AVCodecContext *codecCtx, int fps) : BaseChannel(id, codecCtx) {
+VideoChannel::VideoChannel(int id, AVCodecContext *codecCtx, int fps, AVRational time_base)
+        : BaseChannel(id, codecCtx, time_base) {
     this->fps = fps;
 }
 
@@ -132,7 +133,38 @@ void VideoChannel::video_play() {
         double extra_delay = frame->repeat_pict / (2 * fps);
         double real_delay = extra_delay + delay_time_per_frame;
         //单位是：微妙
-        av_usleep(real_delay * 1000000);
+//        av_usleep(real_delay * 1000000);
+        //需要使用音频时间来判断
+        //获取视频的播放时间
+        double video_time = frame->best_effort_timestamp * av_q2d(time_base);
+        if (!audioChannel) {
+            //没有音频
+            av_usleep(real_delay * 1000000);
+        } else {
+            double audioTime = audioChannel->audio_time;
+            double time_diff = video_time - audioTime;
+            if (time_diff > 0) {
+                //视频比音频快，sleep
+                //判断time_diff值大小，seek后time_diff有可能会很大,导致休眠太久
+                if (time_diff > 1) {
+                    //等音频慢慢赶上
+                    av_usleep(real_delay * 1000000);
+                } else {
+                    av_usleep((real_delay + time_diff) * 1000000);
+                }
+            } else if (time_diff < 0) {
+                //音频比视频快,尝试丢包
+                //视频包：编码前packets，编码后frames
+                if (fabs(time_diff) >= 0.05) {
+                    //时间差如果大于0.05,有明显的延迟感
+                    //丢包：操作队列中数据！一定要小心
+                    frames.pop()
+                    59:46
+                }
+            }
+
+        }
+
 
         //dst_data:AV_PIX_FMT_RGBA格式的数据
         //进行渲染，回调出去 native-lib
@@ -154,4 +186,8 @@ void VideoChannel::video_play() {
 
 void VideoChannel::setRenderCallback(RenderCallback callback) {
     this->renderCallback = callback;
+}
+
+void VideoChannel::setAudioChannel(AudioChannel *audioChannel) {
+    this->audioChannel = audioChannel;
 }
