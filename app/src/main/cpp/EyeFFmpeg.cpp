@@ -51,6 +51,20 @@ void *task_prepare(void *args) {
     return 0;//函数指针一定一定要返回0
 }
 
+/**
+ * 子线程释放内存
+ * @param args
+ * @return
+ */
+void *task_stop(void *args) {
+
+    EyeFFmpeg *ffmpeg = static_cast<EyeFFmpeg *>(args);
+
+    ffmpeg->_start();
+    return 0;
+        29:18
+}
+
 
 void EyeFFmpeg::_prepare() {
     //1 ffmpegcontext
@@ -137,7 +151,7 @@ void EyeFFmpeg::_prepare() {
             //fps帧率
 //            int fps = avRational.num / avRational.den;
             double fps = av_q2d(avRational);
-            videoChannel = new VideoChannel(i, codecContext, fps,time_base);
+            videoChannel = new VideoChannel(i, codecContext, fps, time_base);
             videoChannel->setRenderCallback(renderCallback);
         }
     }
@@ -259,6 +273,34 @@ void EyeFFmpeg::_start() {
 
 void EyeFFmpeg::setRenderCallback(RenderCallback renderCallback) {
     this->renderCallback = renderCallback;
+}
+
+void EyeFFmpeg::stop() {
+    isPreparing = 0;
+    //prepare阻塞中停止了，不回调java
+    javaCallHelper = 0;
+    //添加子线程执行顺序到主线程
+    pthread_join(pid_prepare, 0);
+
+    //既然在主线程引发ANR，那么到子线程去释放
+    pthread_create(&pid_stop, 0, task_stop, this);
+
+    //在主线程，要保证子线程中_prepare方法执行完
+    if (formatCtx) {
+        avformat_close_input(&formatCtx);
+        avformat_free_context(formatCtx);
+        formatCtx = 0;
+    }
+    if (videoChannel) {
+        videoChannel->stop();
+    }
+    if (audioChannel) {
+        audioChannel->stop();
+    }
+
+}
+
+void EyeFFmpeg::_stop() {
 }
 
 

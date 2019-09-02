@@ -90,4 +90,13 @@ public class MainActivity extends AppCompatActivity {
     public void Play(View view) {
         player.start();
     }
+
+    public void Pause(View view) {
+    }
+
+    public void Stop(View view) {
+        //TODO 停止并释放资源
+        player.stop();
+        player.release();
+    }
 }

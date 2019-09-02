@@ -6,9 +6,43 @@
 
 #include "VideoChannel.h"
 
+/**
+ * 丢包(AVPAcket)
+ * @param q
+ */
+void dropAVPacket(queue<AVPacket *> &q) {
+    if (!q.empty()) {
+        AVPacket *avPacket = q.front();
+        //I帧， B帧，P帧
+        //不能丢I帧
+        if (avPacket->flags != AV_PKT_FLAG_KEY) {
+            //丢弃非I帧
+            BaseChannel::releaseAVPacket(&avPacket);
+            LOGI("丢弃未解码一帧,packet");
+            q.pop();
+        }
+    }
+}
+
+/**
+ * 丢包(AVPAcket)
+ * @param q
+ */
+void dropAVFrame(queue<AVFrame *> &q) {
+    if (!q.empty()) {
+        AVFrame *avFrame = q.front();
+        BaseChannel::releaseAVFrame(&avFrame);
+        LOGI("丢弃画面一帧,frame");
+        q.pop();
+    }
+}
+
+
 VideoChannel::VideoChannel(int id, AVCodecContext *codecCtx, int fps, AVRational time_base)
         : BaseChannel(id, codecCtx, time_base) {
     this->fps = fps;
+    packets.setSyncHandle(dropAVPacket);
+    frames.setSyncHandle(dropAVFrame);
 }
 
 VideoChannel::~VideoChannel() {
@@ -42,7 +76,7 @@ void VideoChannel::start() {
 }
 
 void VideoChannel::stop() {
-
+    isPlaying = 0;
 }
 
 /**
@@ -138,11 +172,13 @@ void VideoChannel::video_play() {
         //获取视频的播放时间
         double video_time = frame->best_effort_timestamp * av_q2d(time_base);
         if (!audioChannel) {
+            LOGI("没有音频，不需要延迟");
             //没有音频
             av_usleep(real_delay * 1000000);
         } else {
             double audioTime = audioChannel->audio_time;
             double time_diff = video_time - audioTime;
+            LOGI("时间差值time_diff: %f", time_diff);
             if (time_diff > 0) {
                 //视频比音频快，sleep
                 //判断time_diff值大小，seek后time_diff有可能会很大,导致休眠太久
@@ -158,8 +194,9 @@ void VideoChannel::video_play() {
                 if (fabs(time_diff) >= 0.05) {
                     //时间差如果大于0.05,有明显的延迟感
                     //丢包：操作队列中数据！一定要小心
-                    frames.pop()
-                    59:46
+                    packets.sync();
+                    //frames.sync();
+                    continue;
                 }
             }
 

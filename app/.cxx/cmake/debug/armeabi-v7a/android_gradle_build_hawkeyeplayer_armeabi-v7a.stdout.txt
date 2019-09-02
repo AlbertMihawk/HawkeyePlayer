@@ -1,4 +1,2 @@
 ninja: Entering directory `/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/debug/armeabi-v7a'
-[1/2] Building CXX object CMakeFiles/hawkeyeplayer.dir/AudioChannel.cpp.o
-clang++: warning: argument unused during compilation: '-L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/armeabi-v7a' [-Wunused-command-line-argument]
-[2/2] Linking CXX shared library /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libhawkeyeplayer.so
+ninja: no work to do.

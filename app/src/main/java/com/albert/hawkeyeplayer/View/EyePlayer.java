@@ -116,6 +116,25 @@ public class EyePlayer implements SurfaceHolder.Callback {
     public native void setSurfaceNative(Surface surface);
 
 
+    /**
+     * 资源释放
+     */
+    public void release() {
+        mHolder.removeCallback(this);
+        releaseNative();
+    }
+
+    private native void releaseNative();
+
+    /**
+     * 停止播放
+     */
+    public void stop() {
+        stopNative();
+    }
+
+    private native void stopNative();
+
     public interface OnPreparedListener {
         void onPrepared();
     }

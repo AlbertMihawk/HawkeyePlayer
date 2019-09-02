@@ -61,7 +61,7 @@ void AudioChannel::start() {
 }
 
 void AudioChannel::stop() {
-
+    isPlaying = 0;
 }
 
 /**

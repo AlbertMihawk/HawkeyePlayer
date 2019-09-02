@@ -48,6 +48,7 @@ void renderFrame(uint8_t *src_data, int src_lineSize, int width, int height) {
     ANativeWindow_unlockAndPost(window);
     pthread_mutex_unlock(&mutex);
 }
+
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_albert_hawkeyeplayer_MainActivity_stringFromJNI(
         JNIEnv *env,
@@ -94,4 +95,28 @@ Java_com_albert_hawkeyeplayer_View_EyePlayer_setSurfaceNative(JNIEnv *env, jobje
     window = ANativeWindow_fromSurface(env, surface);
 
     pthread_mutex_unlock(&mutex);
+}
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_albert_hawkeyeplayer_View_EyePlayer_releaseNative(JNIEnv *env, jobject thiz) {
+    // TODO: implement releaseNative()
+    pthread_mutex_lock(&mutex);
+
+    if (window) {
+        //把老的释放
+        ANativeWindow_release(window);
+        window = 0;
+    }
+
+    pthread_mutex_unlock(&mutex);
+    DELETE(ffmpeg)
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_albert_hawkeyeplayer_View_EyePlayer_stopNative(JNIEnv *env, jobject thiz) {
+    // TODO: implement stopNative()
+    if (ffmpeg) {
+        ffmpeg->stop();
+    }
 }
