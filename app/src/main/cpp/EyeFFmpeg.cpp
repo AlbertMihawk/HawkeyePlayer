@@ -60,10 +60,31 @@ void *task_stop(void *args) {
 
     EyeFFmpeg *ffmpeg = static_cast<EyeFFmpeg *>(args);
 
-    ffmpeg->_start();
+    ffmpeg->isPreparing = 0;
+    //添加子线程执行顺序到主线程
+    pthread_join(ffmpeg->pid_prepare, 0);
+
+    //在主线程，要保证子线程中_prepare方法执行完
+    if (ffmpeg->formatCtx) {
+        avformat_close_input(&ffmpeg->formatCtx);
+        avformat_free_context(ffmpeg->formatCtx);
+        ffmpeg->formatCtx = 0;
+    }
+
+
+    if (ffmpeg->videoChannel) {
+        ffmpeg->videoChannel->stop();
+    }
+    if (ffmpeg->audioChannel) {
+        ffmpeg->audioChannel->stop();
+    }
+
+    DELETE(ffmpeg->videoChannel)
+    DELETE(ffmpeg->audioChannel)
+    DELETE(ffmpeg)
     return 0;
-        29:18
 }
+35.35
 
 
 void EyeFFmpeg::_prepare() {
@@ -276,31 +297,25 @@ void EyeFFmpeg::setRenderCallback(RenderCallback renderCallback) {
 }
 
 void EyeFFmpeg::stop() {
-    isPreparing = 0;
+//    isPreparing = 0;
     //prepare阻塞中停止了，不回调java
     javaCallHelper = 0;
-    //添加子线程执行顺序到主线程
-    pthread_join(pid_prepare, 0);
-
     //既然在主线程引发ANR，那么到子线程去释放
     pthread_create(&pid_stop, 0, task_stop, this);
 
-    //在主线程，要保证子线程中_prepare方法执行完
-    if (formatCtx) {
-        avformat_close_input(&formatCtx);
-        avformat_free_context(formatCtx);
-        formatCtx = 0;
-    }
-    if (videoChannel) {
-        videoChannel->stop();
-    }
-    if (audioChannel) {
-        audioChannel->stop();
-    }
+//    //在主线程，要保证子线程中_prepare方法执行完
+//    if (formatCtx) {
+//        avformat_close_input(&formatCtx);
+//        avformat_free_context(formatCtx);
+//        formatCtx = 0;
+//    }
+//    if (videoChannel) {
+//        videoChannel->stop();
+//    }
+//    if (audioChannel) {
+//        audioChannel->stop();
+//    }
 
-}
-
-void EyeFFmpeg::_stop() {
 }
 
 

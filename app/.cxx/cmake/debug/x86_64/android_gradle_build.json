@@ -1,58 +1,57 @@
 {
   "stringTable": {
-    "0": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64",
-    "1": "--target=x86_64-none-linux-android23 --gcc-toolchain=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dhawkeyeplayer_EXPORTS -I/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/x86_64 -O0 -fno-limit-debug-info -fPIC"
+    "0": "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64",
+    "1": "--target=x86_64-none-linux-android --gcc-toolchain=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86_64-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/sysroot -Dhawkeyeplayer_EXPORTS -I/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/include -isystem /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86_64/include -isystem /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward -isystem /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/sysroot/usr/include/x86_64-linux-android -D__ANDROID_API__=23 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -L/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/libs/x86_64 -O0 -fno-limit-debug-info -fPIC"
   },
   "buildFiles": [
-    "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
-    "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
-    "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/CMakeLists.txt"
+    "/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/CMakeLists.txt"
   ],
   "cleanCommands": [
-    "/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64\" clean"
+    "/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64\" clean"
   ],
-  "buildTargetsCommand": "/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "hawkeyeplayer-Debug-x86_64": {
-      "buildCommand": "/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64\" hawkeyeplayer",
+      "buildCommand": "/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/debug/x86_64\" hawkeyeplayer",
       "buildType": "debug",
-      "toolchain": "68767339",
+      "toolchain": "3462980878",
       "abi": "x86_64",
       "artifactName": "hawkeyeplayer",
       "files": [
         {
-          "src": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/AudioChannel.cpp",
+          "src": "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/AudioChannel.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/EyeFFmpeg.cpp",
+          "src": "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/EyeFFmpeg.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/JavaCallHelper.cpp",
+          "src": "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/JavaCallHelper.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/VideoChannel.cpp",
+          "src": "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/VideoChannel.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/native-lib.cpp",
+          "src": "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/src/main/cpp/native-lib.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/x86_64/libhawkeyeplayer.so"
+      "output": "/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/x86_64/libhawkeyeplayer.so"
     }
   },
   "toolchains": {
-    "68767339": {
-      "cppCompilerExecutable": "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    "3462980878": {
+      "cppCompilerExecutable": "/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
     }
   },
   "cFileExtensions": [],

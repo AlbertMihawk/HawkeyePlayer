@@ -18,6 +18,8 @@ extern "C" {
 };
 
 class EyeFFmpeg {
+    //使用友元函数
+    friend void *task_stop(void *args);
 public:
     EyeFFmpeg(JavaCallHelper *javaCallHelper, char *dataSource);
 
@@ -46,8 +48,9 @@ private:
     pthread_t pid_start;
     pthread_t pid_stop;
     bool isPreparing;
-    AVFormatContext *formatCtx;
     RenderCallback renderCallback;
+
+    AVFormatContext *formatCtx;
 };
 
 

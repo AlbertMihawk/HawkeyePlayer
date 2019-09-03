@@ -1,5 +1,5 @@
 {
-  "ndkFolder": "/Users/xiaoxu/Library/Android/sdk/ndk-bundle",
+  "ndkFolder": "/Users/lixiaoxu/Library/Android/sdk/ndk-bundle",
   "messages": [
     {
       "level": "INFO",
@@ -7,7 +7,7 @@
     },
     {
       "level": "INFO",
-      "message": "ndk.dir in local.properties is /Users/xiaoxu/Library/Android/sdk/ndk-bundle"
+      "message": "ndk.dir in local.properties is /Users/lixiaoxu/Library/Android/sdk/ndk-bundle"
     },
     {
       "level": "INFO",
@@ -15,19 +15,23 @@
     },
     {
       "level": "INFO",
-      "message": "sdkFolder is /Users/xiaoxu/Library/Android/sdk"
+      "message": "sdkFolder is /Users/lixiaoxu/Library/Android/sdk"
     },
     {
       "level": "INFO",
-      "message": "Considering /Users/xiaoxu/Library/Android/sdk/ndk-bundle by ndk.dir"
+      "message": "Considering /Users/lixiaoxu/Library/Android/sdk/ndk-bundle by ndk.dir"
     },
     {
       "level": "INFO",
-      "message": "Considering /Users/xiaoxu/Library/Android/sdk/ndk-bundle in SDK ndk-bundle folder"
+      "message": "Considering /Users/lixiaoxu/Library/Android/sdk/ndk-bundle in SDK ndk-bundle folder"
     },
     {
       "level": "INFO",
-      "message": "Found requested ndk.dir (/Users/xiaoxu/Library/Android/sdk/ndk-bundle) which has version 20.0.5594570"
+      "message": "Considering /Users/lixiaoxu/Library/Android/sdk/ndk/20.0.5594570 in SDK ndk folder"
+    },
+    {
+      "level": "INFO",
+      "message": "Found requested ndk.dir (/Users/lixiaoxu/Library/Android/sdk/ndk-bundle) which has version 16.1.4479499"
     }
   ]
 }

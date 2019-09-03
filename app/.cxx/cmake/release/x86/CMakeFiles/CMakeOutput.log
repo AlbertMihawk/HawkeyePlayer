@@ -1,71 +1,63 @@
 The target system is: Android - 1 - i686
-The host system is: Darwin - 18.7.0 - x86_64
+The host system is: Darwin - 18.6.0 - x86_64
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_dcf6c"
-[1/2] Building C object CMakeFiles/cmTC_dcf6c.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_dcf6c
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_329db"
+[1/2] Building C object CMakeFiles/cmTC_329db.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_329db
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_077b5"
-[1/2] Building C object CMakeFiles/cmTC_077b5.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_077b5
-Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)
-Target: i686-none-linux-android23
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_15723"
+[1/2] Building C object CMakeFiles/cmTC_15723.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_15723
+Android clang version 5.0.300080  (based on LLVM 5.0.300080)
+Target: i686-none-linux-android
 Thread model: posix
-InstalledDir: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin
-Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
-Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x
-Selected GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
+InstalledDir: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin
+Found candidate GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
+Selected GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
- "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_077b5 /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtbegin_dynamic.o -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_077b5.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtend_android.o
+ "/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_15723 /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtbegin_dynamic.o -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386 -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_15723.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_077b5"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_077b5.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_077b5]
-  ignore line: [Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)]
-  ignore line: [Target: i686-none-linux-android23]
+  ignore line: [Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_15723"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_15723.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_15723]
+  ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
+  ignore line: [Target: i686-none-linux-android]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin]
-  ignore line: [Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
-  ignore line: [Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x]
-  ignore line: [Selected GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  ignore line: [InstalledDir: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin]
+  ignore line: [Found candidate GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  ignore line: [Selected GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
   ignore line: [Candidate multilib: .]
   ignore line: [@m32]
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
-  link line: [ "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_077b5 /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtbegin_dynamic.o -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_077b5.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtend_android.o]
-    arg [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld] ==> ignore
-    arg [--sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
+  link line: [ "/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_15723 /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtbegin_dynamic.o -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386 -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_15723.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtend_android.o]
+    arg [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld] ==> ignore
+    arg [--sysroot=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--enable-new-dtags] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_i386] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_077b5] ==> ignore
-    arg [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtbegin_dynamic.o] ==> ignore
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib]
+    arg [cmTC_15723] ==> ignore
+    arg [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtbegin_dynamic.o] ==> ignore
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386]
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
     arg [--exclude-libs] ==> ignore
@@ -75,33 +67,34 @@ Parsed C implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_077b5.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-znocopyreloc] ==> ignore
+    arg [CMakeFiles/cmTC_15723.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtend_android.o] ==> ignore
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/i686-linux-android/lib]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib]
+    arg [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtend_android.o] ==> ignore
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386]
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/i686-linux-android/lib]
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib]
   implicit libs: [gcc;dl;c;gcc;dl]
-  implicit dirs: [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/i686-linux-android/lib;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib]
+  implicit dirs: [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386;/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x;/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/i686-linux-android/lib;/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib]
   implicit fwks: []
 
 
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_4980e"
-[1/2] Building C object CMakeFiles/cmTC_4980e.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_4980e
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_95bc3"
+[1/2] Building C object CMakeFiles/cmTC_95bc3.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_95bc3
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -111,11 +104,11 @@ Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ni
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_a3ca3"
-[1/2] Building C object CMakeFiles/cmTC_a3ca3.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_a3ca3
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_5fca1"
+[1/2] Building C object CMakeFiles/cmTC_5fca1.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_5fca1
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -125,11 +118,11 @@ Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ni
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_6922c"
-[1/2] Building C object CMakeFiles/cmTC_6922c.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_6922c
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_e92eb"
+[1/2] Building C object CMakeFiles/cmTC_e92eb.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_e92eb
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -137,71 +130,63 @@ Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ni
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_3e135"
-[1/2] Building CXX object CMakeFiles/cmTC_3e135.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_3e135
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_121ea"
+[1/2] Building CXX object CMakeFiles/cmTC_121ea.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_121ea
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_9b117"
-[1/2] Building CXX object CMakeFiles/cmTC_9b117.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_9b117
-Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)
-Target: i686-none-linux-android23
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_f35b3"
+[1/2] Building CXX object CMakeFiles/cmTC_f35b3.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_f35b3
+Android clang version 5.0.300080  (based on LLVM 5.0.300080)
+Target: i686-none-linux-android
 Thread model: posix
-InstalledDir: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin
-Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
-Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x
-Selected GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
+InstalledDir: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin
+Found candidate GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
+Selected GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
- "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_9b117 /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtbegin_dynamic.o -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_9b117.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtend_android.o
+ "/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_f35b3 /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtbegin_dynamic.o -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386 -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_f35b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_9b117"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_9b117.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_9b117]
-  ignore line: [Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)]
-  ignore line: [Target: i686-none-linux-android23]
+  ignore line: [Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_f35b3"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_f35b3.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_f35b3]
+  ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
+  ignore line: [Target: i686-none-linux-android]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin]
-  ignore line: [Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
-  ignore line: [Found candidate GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x]
-  ignore line: [Selected GCC installation: /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  ignore line: [InstalledDir: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin]
+  ignore line: [Found candidate GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  ignore line: [Selected GCC installation: /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
   ignore line: [Candidate multilib: .]
   ignore line: [@m32]
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
-  link line: [ "/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_9b117 /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtbegin_dynamic.o -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23 -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_9b117.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtend_android.o]
-    arg [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld] ==> ignore
-    arg [--sysroot=/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
+  link line: [ "/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld" --sysroot=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86 -pie --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_f35b3 /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtbegin_dynamic.o -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386 -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_f35b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtend_android.o]
+    arg [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld] ==> ignore
+    arg [--sysroot=/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--enable-new-dtags] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_i386] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_9b117] ==> ignore
-    arg [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtbegin_dynamic.o] ==> ignore
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
-    arg [-L/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib] ==> dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib]
+    arg [cmTC_f35b3] ==> ignore
+    arg [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtbegin_dynamic.o] ==> ignore
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386]
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib]
+    arg [-L/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib] ==> dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
     arg [--exclude-libs] ==> ignore
@@ -211,37 +196,38 @@ Parsed CXX implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_9b117.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-    arg [-Bstatic] ==> ignore
-    arg [-lc++] ==> lib [c++]
-    arg [-Bdynamic] ==> ignore
+    arg [-znocopyreloc] ==> ignore
+    arg [CMakeFiles/cmTC_f35b3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
+    arg [-lgcc] ==> lib [gcc]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23/crtend_android.o] ==> ignore
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/i686-linux-android/lib]
-  collapse library dir [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib] ==> [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib]
-  implicit libs: [c++;m;gcc;dl;c;gcc;dl]
-  implicit dirs: [/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.7/lib/linux/i386;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/23;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/i686-linux-android/lib;/Users/xiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib]
+    arg [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib/crtend_android.o] ==> ignore
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386]
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/i686-linux-android/lib]
+  collapse library dir [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib] ==> [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib]
+  implicit libs: [stdc++;m;gcc;gcc;dl;c;gcc;gcc;dl]
+  implicit dirs: [/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/i386;/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x;/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64/i686-linux-android/lib;/Users/lixiaoxu/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-x86/usr/lib]
   implicit fwks: []
 
 
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_785ba"
-[1/2] Building CXX object CMakeFiles/cmTC_785ba.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_785ba
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_c98de"
+[1/2] Building CXX object CMakeFiles/cmTC_c98de.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_c98de
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -304,11 +290,11 @@ Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ni
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_f5867"
-[1/2] Building CXX object CMakeFiles/cmTC_f5867.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_f5867
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_56999"
+[1/2] Building CXX object CMakeFiles/cmTC_56999.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_56999
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -371,11 +357,11 @@ Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ni
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_f643e"
-[1/2] Building CXX object CMakeFiles/cmTC_f643e.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_f643e
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_e542f"
+[1/2] Building CXX object CMakeFiles/cmTC_e542f.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_e542f
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -438,11 +424,11 @@ Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ni
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_8034c"
-[1/2] Building CXX object CMakeFiles/cmTC_8034c.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_8034c
+Run Build Command:"/Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_9256e"
+[1/2] Building CXX object CMakeFiles/cmTC_9256e.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_9256e
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
