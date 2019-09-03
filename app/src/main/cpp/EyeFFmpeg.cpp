@@ -84,7 +84,7 @@ void *task_stop(void *args) {
     DELETE(ffmpeg)
     return 0;
 }
-35.35
+
 
 
 void EyeFFmpeg::_prepare() {
@@ -256,6 +256,15 @@ void EyeFFmpeg::_start() {
             av_usleep(10 * 1000);
             continue;
         }
+        /**
+         * 泄露点2
+         * 控制音频packet队列数量
+         */
+        if (audioChannel && audioChannel->packets.size() > 100) {
+            av_usleep(10 * 1000);
+            continue;
+        }
+
         AVPacket *packet = av_packet_alloc();
         int ret = av_read_frame(formatCtx, packet);
         if (!ret) {
@@ -272,7 +281,12 @@ void EyeFFmpeg::_start() {
         } else if (ret == AVERROR_EOF) {
             //ret不为0，end of数据到结尾,读完了
             //有可能读完了，播放为完成
-            //TODO
+            //判断有没有播放完
+            if (videoChannel->packets.empty() && videoChannel->frames.empty()) {
+                //播放完成
+                av_packet_free(&packet);
+                break;
+            }
 
         } else {
             //TODO 作业，出现错误
@@ -280,6 +294,7 @@ void EyeFFmpeg::_start() {
             if (javaCallHelper) {
                 javaCallHelper->onError(THREAD_CHILD, ret);
             }
+            av_packet_free(&packet);
             break;
         }
 

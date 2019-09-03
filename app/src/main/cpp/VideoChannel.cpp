@@ -74,7 +74,9 @@ void VideoChannel::start() {
     pthread_create(&pid_video_play, 0, task_video_play, this);
 
 }
-
+/**
+ * 停止播放
+ */
 void VideoChannel::stop() {
     isPlaying = 0;
 }

@@ -59,9 +59,49 @@ void AudioChannel::start() {
     pthread_create(&pid_audio_play, 0, task_audio_play, this);
 
 }
-
+/**
+ * 停止播放
+ */
 void AudioChannel::stop() {
     isPlaying = 0;
+
+    /**
+     * 释放
+     * //引擎
+    SLObjectItf engineObject = 0;
+    //引擎接口
+    SLEngineItf engineInterface = 0;
+    //混音器
+    SLObjectItf outputMixObject = 0;
+    //播放器
+    SLObjectItf bqPlayerObject = 0;
+    //播放器接口
+    SLPlayItf bqPlayerPlay = 0;
+    //播放器队列接口
+    SLAndroidSimpleBufferQueueItf bqPlayerBufferQueue = 0;
+     反向顺序释放
+     */
+     //7.1设置停止播放状态
+    if (bqPlayerPlay) {
+        (*bqPlayerPlay)->SetPlayState(bqPlayerPlay, SL_PLAYSTATE_STOPPED);
+    }
+
+    //7.2销毁播放器
+    if (bqPlayerObject) {
+        (*bqPlayerObject)->Destroy(bqPlayerObject);
+        bqPlayerObject = 0;
+        bqPlayerBufferQueue = 0;
+    }
+
+    //7.3销毁混音器
+    if (outputMixObject) {
+        (*outputMixObject)->Destroy(outputMixObject);
+        outputMixObject = 0;
+    }
+
+    //7.4销毁引擎
+    56.51
+
 }
 
 /**
