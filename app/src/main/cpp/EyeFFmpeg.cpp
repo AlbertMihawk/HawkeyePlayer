@@ -86,7 +86,6 @@ void *task_stop(void *args) {
 }
 
 
-
 void EyeFFmpeg::_prepare() {
     //1 ffmpegcontext
 
@@ -119,6 +118,9 @@ void EyeFFmpeg::_prepare() {
         }
         return;
     }
+    //上下文拿到总时长
+    duration = formatCtx->duration / AV_TIME_BASE;
+    LOGI("总时长 %ld", duration);
     for (int i = 0; i < formatCtx->nb_streams; ++i) {
         AVStream *stream = formatCtx->streams[i];
         //获取编解码流参数
@@ -172,7 +174,7 @@ void EyeFFmpeg::_prepare() {
             //fps帧率
 //            int fps = avRational.num / avRational.den;
             double fps = av_q2d(avRational);
-            videoChannel = new VideoChannel(i, codecContext, fps, time_base);
+            videoChannel = new VideoChannel(javaCallHelper, i, codecContext, fps, time_base);
             videoChannel->setRenderCallback(renderCallback);
         }
     }
@@ -331,6 +333,10 @@ void EyeFFmpeg::stop() {
 //        audioChannel->stop();
 //    }
 
+}
+
+int EyeFFmpeg::getDuration() const {
+    return duration;
 }
 
 

@@ -10,17 +10,19 @@ import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.albert.hawkeyeplayer.View.EyePlayer;
 
 import java.io.File;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     private static final String TAG = "MainActivity";
     private SurfaceView surfaceView;
     private EyePlayer player;
+    private SeekBar seekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         requestPermissions();
         surfaceView = findViewById(R.id.surface_view);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(this);
         player = new EyePlayer();
         player.setSurfaceView(surfaceView);
 
@@ -48,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
         player.setOnPreparedListener(new EyePlayer.OnPreparedListener() {
             @Override
             public void onPrepared() {
+                final int duration = player.getDuration();
+                if (duration != 0) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            seekBar.setVisibility(View.VISIBLE);
+                        }
+                    });
+                }
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -59,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
                 //播放 调用到native去
                 //开始播放
 //                player.start();
+            }
+        });
+
+        player.setOnProgressListener(new EyePlayer.OnProgressListener() {
+            @Override
+            public void onProgress(final float time) {
+                seekBar.setProgress((int) (time / player.getDuration() * seekBar.getMax()));
+                122:51
             }
         });
 
@@ -83,6 +104,12 @@ public class MainActivity extends AppCompatActivity {
 //        player.prepare();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        player.release();
+    }
+
     public void Prepare(View view) {
         player.prepare();
     }
@@ -97,6 +124,30 @@ public class MainActivity extends AppCompatActivity {
     public void Stop(View view) {
         //TODO 停止并释放资源
         player.stop();
-        player.release();
+
+    }
+
+    /**
+     * 跟随进度自动更新,拿到总时长
+     * 1.总时长
+     * 2.当前播放时间
+     *
+     * @param seekBar
+     * @param progress
+     * @param fromUser
+     */
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        seekBar.setProgress(progress);
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 }

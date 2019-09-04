@@ -24,7 +24,7 @@ file(GLOB src_files *.cpp)
 
 add_library(
         hawkeyeplayer
-         SHARED
+        SHARED
         ${src_files})
 
 target_link_libraries( # Specifies the target library.

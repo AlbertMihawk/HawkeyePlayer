@@ -8,6 +8,7 @@
 
 #include "BaseChannel.h"
 #include "AudioChannel.h"
+#include "JavaCallHelper.h"
 
 extern "C" {
 #include <libswscale/swscale.h>
@@ -18,7 +19,7 @@ typedef void (*RenderCallback)(uint8_t *data, int lineSize, int Width, int heigh
 
 class VideoChannel : public BaseChannel {
 public:
-    VideoChannel(int id, AVCodecContext *codecCtx, int fps, AVRational time_base);
+    VideoChannel(JavaCallHelper *javaCallHelper,int id, AVCodecContext *codecCtx, int fps, AVRational time_base);
 
     ~VideoChannel();
 
@@ -35,6 +36,7 @@ public:
     void setAudioChannel(AudioChannel *audioChannel);
 
 private:
+    JavaCallHelper *javaCallHelper;
     pthread_t pid_video_decode;
     pthread_t pid_video_play;
     RenderCallback renderCallback;

@@ -38,8 +38,10 @@ void dropAVFrame(queue<AVFrame *> &q) {
 }
 
 
-VideoChannel::VideoChannel(int id, AVCodecContext *codecCtx, int fps, AVRational time_base)
+VideoChannel::VideoChannel(JavaCallHelper *javaCallHelper, int id, AVCodecContext *codecCtx,
+                           int fps, AVRational time_base)
         : BaseChannel(id, codecCtx, time_base) {
+    this->javaCallHelper = javaCallHelper;
     this->fps = fps;
     packets.setSyncHandle(dropAVPacket);
     frames.setSyncHandle(dropAVFrame);
@@ -74,18 +76,18 @@ void VideoChannel::start() {
     pthread_create(&pid_video_play, 0, task_video_play, this);
 
 }
+
 /**
  * 停止播放
  */
 void VideoChannel::stop() {
     isPlaying = 0;
+    DELETE(javaCallHelper)
     packets.setWork(0);
     frames.setWork(0);
 
     pthread_join(pid_video_decode, 0);
     pthread_join(pid_video_play, 0);
-
-
 
 }
 
@@ -181,6 +183,9 @@ void VideoChannel::video_play() {
         //需要使用音频时间来判断
         //获取视频的播放时间
         double video_time = frame->best_effort_timestamp * av_q2d(time_base);
+        if (javaCallHelper) {
+            javaCallHelper->onProgress(THREAD_CHILD, video_time);
+        }
         if (!audioChannel) {
             LOGI("没有音频，不需要延迟");
             //没有音频
@@ -188,7 +193,8 @@ void VideoChannel::video_play() {
         } else {
             double audioTime = audioChannel->audio_time;
             double time_diff = video_time - audioTime;
-            LOGI("时间差值time_diff: %f", time_diff);
+//            LOGI("时间差值time_diff: %f", time_diff);
+//            LOGI("视频播放时间: %f，音频播放时间：%f", video_time, audioTime);
             if (time_diff > 0) {
                 //视频比音频快，sleep
                 //判断time_diff值大小，seek后time_diff有可能会很大,导致休眠太久

@@ -120,3 +120,14 @@ Java_com_albert_hawkeyeplayer_View_EyePlayer_stopNative(JNIEnv *env, jobject thi
         ffmpeg->stop();
     }
 }
+
+
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_albert_hawkeyeplayer_View_EyePlayer_getNativeDuration(JNIEnv *env, jobject thiz) {
+    // TODO: implement getNativeDuration()
+    if (ffmpeg) {
+        return ffmpeg->getDuration();
+    }
+    return 0;
+}

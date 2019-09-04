@@ -1,2 +1,14 @@
-ninja: Entering directory `/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/debug/arm64-v8a'
-ninja: no work to do.
+ninja: Entering directory `/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/debug/arm64-v8a'
+[1/3] Building CXX object CMakeFiles/hawkeyeplayer.dir/native-lib.cpp.o
+clang++: warning: argument unused during compilation: '-L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/arm64-v8a' [-Wunused-command-line-argument]
+[2/3] Building CXX object CMakeFiles/hawkeyeplayer.dir/EyeFFmpeg.cpp.o
+clang++: warning: argument unused during compilation: '-L/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/libs/arm64-v8a' [-Wunused-command-line-argument]
+/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/EyeFFmpeg.cpp:123:27: warning: format specifies type 'long' but the argument has type 'int' [-Wformat]
+    LOGI("总时长 %ld", duration);
+                 ~~~   ^~~~~~~~
+                 %d
+/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/src/main/cpp/marco.h:14:70: note: expanded from macro 'LOGI'
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO,"EyeFFmpeg",##__VA_ARGS__)
+                                                                     ^~~~~~~~~~~
+1 warning generated.
+[3/3] Linking CXX shared library /Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhawkeyeplayer.so

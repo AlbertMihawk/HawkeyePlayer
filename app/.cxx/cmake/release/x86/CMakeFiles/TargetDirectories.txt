@@ -1,3 +1,0 @@
-/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/rebuild_cache.dir
-/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/edit_cache.dir
-/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/release/x86/CMakeFiles/hawkeyeplayer.dir

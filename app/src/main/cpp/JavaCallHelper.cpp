@@ -14,6 +14,7 @@ JavaCallHelper::JavaCallHelper(JavaVM *javaVM_, JNIEnv *env_, jobject instance_)
     this->clazz = env->GetObjectClass(instance);
     jmd_prepared = env->GetMethodID(clazz, "onPrepared", "()V");
     jmd_error = env->GetMethodID(clazz, "onError", "(I)V");
+    jmd_progress = env->GetMethodID(clazz, "onProgress", "(F)V");
 
 
 }
@@ -56,5 +57,18 @@ void JavaCallHelper::onError(int threadMode, int errorCode) {
 
     }
 
+}
+
+void JavaCallHelper::onProgress(int threadMode, float time) {
+    if (threadMode == THREAD_MAIN) {
+        env->CallVoidMethod(instance, jmd_progress, time);
+    }
+    if (threadMode == THREAD_CHILD) {
+        //子线程
+        JNIEnv *env_child;
+        javaVM->AttachCurrentThread(&env_child, 0);
+        env_child->CallVoidMethod(instance, jmd_progress, time);
+        javaVM->DetachCurrentThread();
+    }
 }
 

@@ -70,6 +70,10 @@ void AudioChannel::stop() {
     pthread_join(pid_audio_decode, 0);
     pthread_join(pid_audio_play, 0);
 
+    if (swrCtx) {
+        swr_free(&swrCtx);
+        swrCtx = 0;
+    }
     /**
      * 释放
      * //引擎

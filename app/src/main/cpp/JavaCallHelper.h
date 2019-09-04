@@ -19,6 +19,8 @@ public:
 
     void onError(int threadMode, int errorCode);
 
+    void onProgress(int threadMode, float time);
+
 private:
     JavaVM *javaVM;
     JNIEnv *env;
@@ -26,6 +28,7 @@ private:
     jclass clazz;
     jmethodID jmd_prepared;
     jmethodID jmd_error;
+    jmethodID jmd_progress;
 
 };
 

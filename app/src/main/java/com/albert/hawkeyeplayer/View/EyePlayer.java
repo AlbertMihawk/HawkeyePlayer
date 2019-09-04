@@ -17,6 +17,7 @@ public class EyePlayer implements SurfaceHolder.Callback {
 
     private OnErrorListener onErrorListener;
     private OnPreparedListener onPreparedListener;
+    private OnProgressListener onProgressListener;
 
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -61,12 +62,22 @@ public class EyePlayer implements SurfaceHolder.Callback {
         }
     }
 
+    public void onProgress(float time) {
+        if (onProgressListener != null) {
+            onProgressListener.onProgress(time);
+        }
+    }
+
     public void setOnPreparedListener(OnPreparedListener onPreparedListener) {
         this.onPreparedListener = onPreparedListener;
     }
 
     public void setOnErrorListener(OnErrorListener onErrorListener) {
         this.onErrorListener = onErrorListener;
+    }
+
+    public void setOnProgressListener(OnProgressListener onProgressListener) {
+        this.onProgressListener = onProgressListener;
     }
 
     private native void prepareNative(String dataSource);
@@ -135,6 +146,17 @@ public class EyePlayer implements SurfaceHolder.Callback {
 
     private native void stopNative();
 
+    /**
+     * 总时间
+     *
+     * @return
+     */
+    public int getDuration() {
+        return getNativeDuration();
+    }
+
+    private native int getNativeDuration();
+
     public interface OnPreparedListener {
         void onPrepared();
     }
@@ -142,4 +164,9 @@ public class EyePlayer implements SurfaceHolder.Callback {
     public interface OnErrorListener {
         void onError(int errorCode);
     }
+
+    public interface OnProgressListener {
+        void onProgress(float time);
+    }
+
 }

@@ -20,6 +20,7 @@ extern "C" {
 class EyeFFmpeg {
     //使用友元函数
     friend void *task_stop(void *args);
+
 public:
     EyeFFmpeg(JavaCallHelper *javaCallHelper, char *dataSource);
 
@@ -39,6 +40,8 @@ public:
 
     void _stop();
 
+    int getDuration() const;
+
 private:
     JavaCallHelper *javaCallHelper = 0;
     AudioChannel *audioChannel = 0;
@@ -51,6 +54,7 @@ private:
     RenderCallback renderCallback;
 
     AVFormatContext *formatCtx;
+    int duration;//总播放时长
 };
 
 

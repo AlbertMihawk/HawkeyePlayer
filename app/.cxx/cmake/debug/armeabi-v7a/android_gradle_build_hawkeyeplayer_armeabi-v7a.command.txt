@@ -1,7 +1,7 @@
-Executable : /Users/lixiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+Executable : /Users/xiaoxu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
 arguments : 
 -C
-/Users/lixiaoxu/Documents/code_project/HawkeyePlayer/app/.cxx/cmake/debug/armeabi-v7a
+/Users/xiaoxu/Documents/NetEaseCloud_project/HawkeyePlayer/app/.cxx/cmake/debug/armeabi-v7a
 hawkeyeplayer
 jvmArgs : 
 
