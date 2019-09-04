@@ -25,12 +25,12 @@
             android:onClick="Play"
             android:text="Play" />
 
-    <Button
-            android:id="@+id/btn_pause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Pause"
-            android:text="Pause" />
+<!--    <Button-->
+<!--            android:id="@+id/btn_pause"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="Pause"-->
+<!--            android:text="Pause" />-->
 
     <Button
             android:id="@+id/btn_stop"

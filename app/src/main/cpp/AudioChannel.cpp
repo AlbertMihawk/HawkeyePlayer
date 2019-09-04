@@ -59,11 +59,16 @@ void AudioChannel::start() {
     pthread_create(&pid_audio_play, 0, task_audio_play, this);
 
 }
+
 /**
  * 停止播放
  */
 void AudioChannel::stop() {
     isPlaying = 0;
+    packets.setWork(0);
+    frames.setWork(0);
+    pthread_join(pid_audio_decode, 0);
+    pthread_join(pid_audio_play, 0);
 
     /**
      * 释放
@@ -81,7 +86,7 @@ void AudioChannel::stop() {
     SLAndroidSimpleBufferQueueItf bqPlayerBufferQueue = 0;
      反向顺序释放
      */
-     //7.1设置停止播放状态
+    //7.1设置停止播放状态
     if (bqPlayerPlay) {
         (*bqPlayerPlay)->SetPlayState(bqPlayerPlay, SL_PLAYSTATE_STOPPED);
     }
@@ -100,7 +105,12 @@ void AudioChannel::stop() {
     }
 
     //7.4销毁引擎
-    56.51
+    if (engineObject) {
+        (*engineObject)->Destroy(engineObject);
+        engineObject = 0;
+        engineInterface = 0;
+    }
+
 
 }
 

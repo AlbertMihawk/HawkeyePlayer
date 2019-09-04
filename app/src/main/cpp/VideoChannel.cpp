@@ -79,6 +79,14 @@ void VideoChannel::start() {
  */
 void VideoChannel::stop() {
     isPlaying = 0;
+    packets.setWork(0);
+    frames.setWork(0);
+
+    pthread_join(pid_video_decode, 0);
+    pthread_join(pid_video_play, 0);
+
+
+
 }
 
 /**
