@@ -339,4 +339,9 @@ int EyeFFmpeg::getDuration() const {
     return duration;
 }
 
+int EyeFFmpeg::seekTo(double d) {
+    134:41
+    return 0;
+}
+
 

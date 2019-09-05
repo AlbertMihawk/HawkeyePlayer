@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             @Override
             public void onProgress(final float time) {
                 seekBar.setProgress((int) (time / player.getDuration() * seekBar.getMax()));
-                122:51
             }
         });
 
@@ -148,6 +147,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
+        //获取seekBar当前进度,进度条转换为真实时间
+        double playProgress = seekBar.getProgress() * 1.0 / seekBar.getMax() * player.getDuration();
+        player.seekTo(playProgress);
 
     }
 }

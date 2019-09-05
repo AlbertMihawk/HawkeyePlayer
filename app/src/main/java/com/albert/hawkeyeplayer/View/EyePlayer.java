@@ -157,6 +157,22 @@ public class EyePlayer implements SurfaceHolder.Callback {
 
     private native int getNativeDuration();
 
+    /**
+     * 播放进度跳转
+     *
+     * @param playProgress
+     */
+    public void seekTo(final double playProgress) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                seekToNative(playProgress);
+            }
+        }).start();
+    }
+
+    private native void seekToNative(double playProgress);
+
     public interface OnPreparedListener {
         void onPrepared();
     }

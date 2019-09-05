@@ -115,7 +115,6 @@ Java_com_albert_hawkeyeplayer_View_EyePlayer_releaseNative(JNIEnv *env, jobject 
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_albert_hawkeyeplayer_View_EyePlayer_stopNative(JNIEnv *env, jobject thiz) {
-    // TODO: implement stopNative()
     if (ffmpeg) {
         ffmpeg->stop();
     }
@@ -125,9 +124,17 @@ Java_com_albert_hawkeyeplayer_View_EyePlayer_stopNative(JNIEnv *env, jobject thi
 extern "C"
 JNIEXPORT jint JNICALL
 Java_com_albert_hawkeyeplayer_View_EyePlayer_getNativeDuration(JNIEnv *env, jobject thiz) {
-    // TODO: implement getNativeDuration()
     if (ffmpeg) {
         return ffmpeg->getDuration();
     }
     return 0;
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_albert_hawkeyeplayer_View_EyePlayer_seekToNative(JNIEnv *env, jobject thiz,
+                                                          jdouble playProgress) {
+    if (ffmpeg) {
+        ffmpeg->seekTo(playProgress);
+    }
 }
