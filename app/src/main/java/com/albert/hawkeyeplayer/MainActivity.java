@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private SurfaceView surfaceView;
     private EyePlayer player;
     private SeekBar seekBar;
+    private boolean isTouch = false;
+    private int seekProgress = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         player.setOnProgressListener(new EyePlayer.OnProgressListener() {
             @Override
             public void onProgress(final float time) {
+                if (isTouch) {
+                    return;
+                }
                 seekBar.setProgress((int) (time / player.getDuration() * seekBar.getMax()));
             }
         });
@@ -137,12 +142,16 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
      */
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        seekBar.setProgress(progress);
+        Log.i(TAG, "onProgressChanged: " + fromUser + "~" + progress + "~" + isTouch);
+        if (fromUser && !isTouch) {
+            seekBar.setProgress(progress);
+        }
+
     }
 
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
-
+        isTouch = true;
     }
 
     @Override
@@ -150,6 +159,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         //获取seekBar当前进度,进度条转换为真实时间
         double playProgress = seekBar.getProgress() * 1.0 / seekBar.getMax() * player.getDuration();
         player.seekTo(playProgress);
+        seekProgress = seekBar.getProgress();
+        isTouch = false;
 
     }
 }

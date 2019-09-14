@@ -57,6 +57,7 @@ private:
 
     AVFormatContext *formatCtx;
     int duration;//总播放时长
+    pthread_mutex_t seekMutex;
 };
 
 
