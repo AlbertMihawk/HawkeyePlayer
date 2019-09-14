@@ -142,10 +142,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
      */
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        Log.i(TAG, "onProgressChanged: " + fromUser + "~" + progress + "~" + isTouch);
-        if (fromUser && !isTouch) {
+//        Log.i(TAG, "onProgressChanged: " + fromUser + "~" + progress + "~" + isTouch);
+//        if (fromUser && !isTouch) {
             seekBar.setProgress(progress);
-        }
+//        }
 
     }
 
